@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTFEL3ECW4"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-WTFEL3ECW4');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmonic Astrology</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #F6F4EB;
+    margin: 0;
+    padding: 0;
+  }
+  /*.container {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  } */
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-overlay {
+    background-color: #F6F4EB; /*rgba(255, 251, 234, 0.9);/* rgba(246, 244, 235, 0.9); /*adjust 0.9 for more or less transparency */
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    border: 2px solid #ccc;
+    backdrop-filter: blur(4px);
+
+}
+
+.video-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* 🔼 text then form */
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 3;
+  text-align: center;
+}
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4682A9;
+    font-weight: bold;
+  }
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4682A9;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  .btn-submit {
+    background-color: #4682A9;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .btn-submit:hover {
+    background-color: #385F80;
+  }
+
+  /* Add this CSS for the time inputs */
+.time-inputs {
+  display: flex;
+  align-items: center;
+}
+
+/* Add this CSS for the time label */
+.time-label {
+  margin-left: 5px; /* Adjust spacing between input and label as needed */
+  margin-right: 15px; /* Add margin between "h" and minute */
+  color: #4682A9;
+  font-weight: bold;
+}
+
+.custom-autocomplete-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4682A9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/*.image-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; 
+} */
+
+.image-item {
+    width: 100%;
+    height: 100vh; /* Adjust the height to control the visible portion of the video */
+    overflow: hidden;
+    position: relative;
+}
+
+.video-overlay {
+  /* background-color: rgba(70, 130, 169, 0.6); /* 0.6 = 60% opacity */
+  color: white;
+  padding: 1.5rem 1.5rem;
+  border-radius: 12px;
+  max-width: 800px;
+  /* margin-bottom: 2rem; /* space below text */
+  font-size: 1.4rem;
+}
+
+footer {
+    background-color: #F6F4EB;
+    color: #4682A9;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+}
+
+.navbar-brand {
+    color:  #4682A9;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle drop shadow */
+}
+
+.navbar-nav .nav-link {
+    color: #4682A9;
+}
+
+.navbar-nav .nav-link.active {
+    color: #4682A9 !important; /* Add !important to ensure the style takes precedence */
+}
+
+
+
+@media (max-width: 767px) {
+
+        .video-overlay {
+            font-size: 0.8rem;
+            padding-top: 2rem; /* Add top padding for <p> elements */
+        }
+
+        
+        .form-overlay {
+          top: 85%;
+          width: 90%;
+          padding: 15px;
+        }
+      
+
+        /* .image-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top; 
+            height: 100vh;
+        } */
+
+        .image-item {
+            width: 100%;
+            height: 90vh; 
+            overflow: hidden;
+            position: relative;
+        }
+
+        input[type="date"],
+        select,
+        input[type="text"] {
+            font-size: 14px; 
+            padding: 8px; 
+    }
+    }
+
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 414px) {
+
+  .container {
+    width: 340px;
+  }
+
+}    
+
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md" style="background-color: #F6F4EB">      
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.harmonicastro.com">
+            <img class="logo" src="logo.png" height="50" alt="Harmonic Astrology Logo">
+            Harmonic Astrology
+        </a>            
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Harmonics
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="harmonicperiodoflife.html">Harmonic Periods of Life</a></li>
+                <li><a class="dropdown-item" href="exploringharmonicastro.html">Exploring Harmonic Astrology</a></li>
+                <li><a class="dropdown-item" href="harmonicone.html">First Harmonic</a></li>
+                <li><a class="dropdown-item" href="harmonictwo.html">Second Harmonic</a></li>
+                <li><a class="dropdown-item" href="harmonicthree.html">Third Harmonic</a></li>
+                <li><a class="dropdown-item" href="harmonicfive.html">Fifth Harmonic</a></li>
+                <li><a class="dropdown-item" href="harmonicseven.html">Seventh Harmonic</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sample Charts
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="oprah.html">Oprah Winfrey</a></li>
+                  <li><a class="dropdown-item" href="martinl.html">Martin Luther</a></li>
+                  <div class="dropdown-divider"></div>
+                  <li><a class="dropdown-item" href="references.html">References</a></li>
+                </ul>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="myjourney.html">My Journey</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="harmoniccalculator.html">Harmonic Calculator</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+            </li>
+            
+          </ul>
+        </div>
+    </div>
+</nav>
+
+
+  <div>  
+        <div class="image-item">
+            <video autoplay loop muted playsinline>
+                <source src="harmonicbackground.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-content-wrapper">
+
+              <div class="video-overlay">
+                <p>Uncover the deeper dimensions of birth charts with Harmonic Astrology.</p>
+                <p> Look beyond traditional aspects: <u>enter your birth details below to explore unseen patterns and potentials. </u></p>
+              </div>
+
+
+
+            <div class="form-overlay">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <label for="birthdate">Birth Date:</label>
+                  <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+            
+                <div class="form-group">
+                  <label for="birthtime">Birth Time:</label>
+                  <div class="time-inputs">
+                    <select id="hour" name="hour" required>
+                      <option value="">Hour</option>
+                      <% for (let i = 0; i < 24; i++) { %>
+                        <% let label = ''; %>
+                        <% let hour = i % 12 === 0 ? 12 : i % 12; %>
+                        <% if (i === 0) { label = '[midn]'; }
+                        else if (i === 12) { label = '[noon]'; }
+                        else if (i < 12) { label = 'am'; }
+                        else { label = 'pm'; } %>
+                        <option value="<%= i %>"><%= hour %> <%= label %></option>
+                      <% } %>
+                    </select>
+                    <span class="time-label">h</span>
+                    <select id="minute" name="minute" required>
+                      <option value="">Minute</option>
+                      <% for (let i = 0; i < 60; i++) { %>
+                        <option value="<%= i %>"><%= String(i).padStart(2, '0') %></option>
+                      <% } %>
+                    </select>
+                    <span class="time-label">min</span>
+                  </div>
+                </div>
+            
+                <div class="form-group">
+                  <label for="birthplace">Birth Place:</label>
+                  <input type="text" id="birthplace" name="birthplace" required>
+                </div>
+                <button type="submit" class="btn-submit">View Harmonics</button>
+              </form>
+            </div>
+
+
+        </div>
+  </div>    
+
+
+
+    
+
+<div>
+
+    <footer>
+        <p>&copy; Harmonic Astrology. All rights reserved.</p>
+    </footer>
+    
+</div>
+
+<!-- Include Google Places API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY %>&libraries=places&callback=initAutocomplete" async defer></script>
+<script>
+    let birthplace;
+    function initAutocomplete() {
+  birthplace = new google.maps.places.Autocomplete(
+    document.getElementById('birthplace'), {
+      types: ['locality'],
+      fields: ['place_id', 'geometry', 'name']
+    });
+
+  birthplace.addListener('place_changed', onPlaceChanged);
+
+  // Add custom class to the input field after autocomplete initialization
+  document.getElementById('birthplace').classList.add('custom-autocomplete-input');
+}
+
+
+    function onPlaceChanged() {
+        var place = birthplace.getPlace();
+        if (!place.geometry) {
+            console.error('No details available for this place.');
+        } else {
+            console.log('Place name: ' + place.name);
+        }
+    }
+</script>
+
+<script src="/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
